@@ -1,10 +1,10 @@
 ## Individual Project #3: Databricks ETL (Extract Transform Load) Pipeline
 
-Building upon the previous [mini-projects](https://github.com/nogibjj/databricks_JCB), I have integrated data ingestion from YahooFinance using the yfinance project. Additionally, I've scheduled an entire ETL pipeline to run weekly so I can end each week with a brief description of what my favorite stocks have been doing.
+Building upon the previous [mini-projects](https://github.com/nogibjj/databricks_JCB), I have integrated data ingestion from YahooFinance using the yfinance package. Additionally, I've scheduled an entire ETL pipeline to run weekly so I can end each week with a brief description of what my favorite stocks have been doing.
 
 ### Data Ingestion
 
-This project makes use of the Databricks Lakehouse. It takes the best of Data Warehouses and Data Lakes to provide a single platform for all data workloads. One of the great advantages is the use of Delta Lakes. Delta is an open-source data storage file format that provides ACID transactions, unified batchand streaming, schema evolution, table history AND time-travel.
+This project makes use of the Databricks Lakehouse. It takes the best of Data Warehouses and Data Lakes to provide a single platform for all data workloads. One of the great advantages is the use of Delta Tables. Delta is an open-source data storage file format that provides ACID transactions, unified batch and streaming, schema evolution, table history AND time-travel.
 
 This is particularly useful for this project. Weekly I download data from the following stocks: stock_tickers = ['EEM', 'IWM', 'SPY', 'XBI', 'XLC', 'XLE', 'XLF', 'XLI', 'XLK', 'XLP', 'XLRE', 'XLU', 'XLV', 'XLY', 'XOP', 'XRT'] and update a DeltaTable object. Each time I do so, a new version of the table is created. This allows me to query the table as it was at any point in time. 
 
@@ -35,4 +35,5 @@ Finally, I scheduled the entire ETL pipeline to run weekly on Fridays at 5pm. Th
 
 ![schedule](https://github.com/nogibjj/databricks_indproject3_JCB/assets/33461065/e0ce1820-c336-4acd-b486-8f0884a99536)
 
+Quick and easy screenshot before ending a successful workweek:
 ![email screenshot](https://github.com/nogibjj/databricks_indproject3_JCB/assets/33461065/9b4b7d83-9637-4895-b6d9-951e5ef447bb)
